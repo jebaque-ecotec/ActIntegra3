@@ -15,12 +15,14 @@
 </nav>
 
 <div class="container">
-    
+    <?php if (isset($_GET['mensaje']) && $_GET['mensaje'] == 'ok'): ?>
+        <div class="alerta exito">✅ Cliente registrado correctamente en BD integradora</div>
+    <?php endif; ?>
 
     <div class="card">
         <div class="card-header">
             <h2>📊 Consulta de Registros</h2>
-            <a href="crear.php" class="btn btn-primary">+ Nuevo Cliente</a>
+            <a href="index.php?accion=crear" class="btn btn-primary">+ Nuevo Cliente</a>
         </div>
 
         <div class="table-responsive">
@@ -37,7 +39,24 @@
                         <th>Acción</th>
                     </tr>
                 </thead>
-                
+                <tbody>
+                    <?php if (!empty($clientes)): ?>
+                        <?php foreach ($clientes as $c): ?>
+                        <tr>
+                            <td><?= $c['id'] ?></td>
+                            <td><?= htmlspecialchars($c['nombres']) ?></td>
+                            <td><?= htmlspecialchars($c['apellidos']) ?></td>
+                            <td><?= htmlspecialchars($c['cedula']) ?></td>
+                            <td><?= htmlspecialchars($c['email']) ?></td>
+                            <td><?= htmlspecialchars($c['telefono']) ?></td>
+                            <td><?= htmlspecialchars($c['direccion']) ?></td>
+                            <td><a href="index.php?accion=eliminar&id=<?= $c['id'] ?>" class="btn btn-sm btn-danger btn-eliminar">Eliminar</a></td>
+                        </tr>
+                        <?php endforeach; ?>
+                    <?php else: ?>
+                        <tr><td colspan="8" style="text-align:center">No hay registros. <a href="index.php?accion=crear">Registrar uno</a></td></tr>
+                    <?php endif; ?>
+                </tbody>
             </table>
         </div>
     </div>
@@ -48,6 +67,6 @@
     </div>
 </div>
 
-
+<script src="js/scripts.js"></script>
 </body>
 </html>

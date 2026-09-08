@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrar Cliente</title>
-    
+    <link rel="stylesheet" href="css/estilos.css">
     </head>
 <body>
 <nav class="navbar">
@@ -18,12 +18,14 @@
     <div class="card">
         <div class="card-header">
             <h2>📝 Formulario de Registro</h2>
-            <a href="" class="btn">← Volver a consulta</a>
+            <a href="index.php?accion=listar" class="btn">← Volver a consulta</a>
         </div>
 
-        
+        <?php if (isset($mensaje)): ?>
+            <div class="alerta error">❌ <?= $mensaje ?></div>
+        <?php endif; ?>
 
-        <form id="formCliente"  method="POST" class="formulario" novalidate>
+        <form id="formCliente" action="index.php?accion=guardar" method="POST" class="formulario" novalidate>
             <div class="grid-2">
                 <div class="form-group">
                     <label>Nombres *</label>
@@ -76,6 +78,6 @@
     </div>
 </div>
 
-
+<script src="js/scripts.js"></script>
 </body>
 </html>

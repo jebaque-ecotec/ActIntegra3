@@ -1,7 +1,7 @@
 <?php
 
 require_once "config/conexion.php";
-require_once "controllers/ClienteController.php";
+require_once "controller/ClienteController.php";
 
 // Instancia del controlador principal
 $controller = new ClienteController();
