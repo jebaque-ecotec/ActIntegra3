@@ -6,11 +6,13 @@ Tecnologia usada: HTML, PHP, CSS, PHP
 Gestor BD: MySQL
 
 Nombre BD: integradora
+
 Usuario: root
+
 sin clave.
 
-
-actividad-integradora-3/
+```
+ActIntegra3/
 ├── index.php                 ← front controller
 ├── config/
 │   └── conexion.php          ← PDO Singleton root sin clave
@@ -28,3 +30,4 @@ actividad-integradora-3/
 │   └── script.js             ← validaciones JS (5 tipos)
 └── sql/
     └── integradora.sql       ← BD integradora + tabla clientes
+```
