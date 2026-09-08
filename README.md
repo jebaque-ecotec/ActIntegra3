@@ -1,2 +1,2 @@
-# ActIntegra3
-ActividadIntegradora3
+# Actividad Integradora 3
+Sistemas de Registro de Clientes
