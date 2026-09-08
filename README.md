@@ -1,7 +1,7 @@
 # Actividad Integradora 3
 ### Sistemas de Registro de Clientes.
 
-Tecnologia usada: HTML, PHP, CSS, PHP
+Tecnologia usada: HTML, JS, PHP, CSS, PHP
 
 Gestor BD: MySQL
 
